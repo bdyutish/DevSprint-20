@@ -21,9 +21,9 @@ export default class Details extends Component {
     }
     componentDidMount(){
         let {id} = this.props.match.params;
-        axios.get("/api/movies/"+id).
-        then(res=>res).
-        then(data=>{
+        axios.get("/api/movies/"+id)
+        .then(res=>res)
+        .then(data=>{
             this.setState({
                 summary:data.data.summary,
                 title:data.data.title,
@@ -35,8 +35,8 @@ export default class Details extends Component {
                 year:data.data.year
             });
             
-        }).
-        catch(err => console.log(err));
+        })
+        .catch(err => console.log(err));
     }
     render(){
     return (

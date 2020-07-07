@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import {withRouter} from "react-router-dom";
-import { Link } from "react-router-dom";
-import ReactModal from 'react-modal';
-import ReactPlayer from 'react-player';
 class Movie extends Component {
     constructor(props) {
         super(props);

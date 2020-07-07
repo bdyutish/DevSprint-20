@@ -48,21 +48,11 @@ class Dashboard extends Component {
     console.log(e.value);
     
     this.setState({category:e.value});
-
-    // const filtered = e.value=="All"?this.props.movies.filter(movie => {
-    //   return movie.category.toLowerCase().includes("".toLowerCase());
-    // }):this.props.movies.filter(movie => {
-    //   return movie.category.toLowerCase().includes(e.value.toLowerCase());
-    // });
     let filtered = [];
     switch(e.value){
       case "All":
         this.setState({url:"/api/movies/all"});
         this.props.fetchMovies("/api/movies/all");
-        // filtered = this.props.movies;
-        // filtered = this.props.movies.filter(movie => {
-        //     return movie.category.toLowerCase().includes("".toLowerCase());
-        //   });
           break;
       case "TOP10":
         console.log(this.state.url);
@@ -79,7 +69,7 @@ class Dashboard extends Component {
     }
 
     // console.log(filtered);
-    if(e.value=="All"||e.value=="TOP10")
+    if(e.value==="All"||e.value==="TOP10")
     this.setState({input:""});
     else
     this.setState({input:e.value});
@@ -92,7 +82,6 @@ class Dashboard extends Component {
 render() {
     const { user } = this.props.auth;
     const categories = ['All','TOP10','Action','Sci-Fi','Drama','Horror','Comedy'];
-    const defaultOption = this.state.category;
     // console.log(this.state.input);
     let postItems = [];
     console.log(this.state.input);
